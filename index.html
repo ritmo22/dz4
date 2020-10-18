@@ -8,27 +8,7 @@
 
 <body>
     <script>
-        var max = 999;
-        var chislo = {
-            number: 322,
-            edinici: 0,
-            desiatie: 0,
-            sotni: 0,
-        };
-        if (chislo.number <= 9) {
-            chislo.edinici = chislo.number;
-        } else if (chislo.number <= 999) {
-            chislo.edinici = Math.floor(chislo.number % 10);
-            chislo.desiatie = Math.floor(chislo.number / 10 % 10);
-            chislo.sotni = Math.floor(chislo.number / 100 % 10);
-        } else {
-            chislo.number = 0;
-            console.log('число больше 999');
-        }
-        console.log(chislo);
-
-    </script>
-    <script>
+        var count = 0;
         const arr_itog = [];
         let finally_it = [];
         class products {
@@ -40,17 +20,16 @@
                 arr_itog.push(this.price);
                 let reducer = (accumulator, currentValue) => accumulator + currentValue;
                 finally_it.push(arr_itog.reduce(reducer));
+                count++;
+                console.log(count);
             }
         }
         const apple = new products('apple', 20);
         const cherry = new products('cherry', 35);
         const orange = new products('orange', 45);
         const banana = new products('banana', 55);
-
         let basket = apple.summa() + cherry.summa() + orange.summa() + banana.summa();
-
         console.log(finally_it[finally_it.length - 1])
-
     </script>
 </body>
 
